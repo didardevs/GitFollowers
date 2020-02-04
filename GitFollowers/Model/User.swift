@@ -9,17 +9,17 @@
 import Foundation
 
 struct User: Codable {
-    var login: String
+    let login: String
     var name: String?
-    var avatarUrl: String
+    let avatarUrl: String
     var location: String?
     var bio: String?
     var publicRepos: Int
-    var publicGists: Int
-    var htmlUrl: String
-    var followers: Int
-    var following: Int
-    var createdAt: String
-    var updatedAt: String
+    let publicGists: Int
+    let htmlUrl: String
+    let followers: Int
+    let following: Int
+    let createdAt: String
+    let updatedAt: String
     
 }
