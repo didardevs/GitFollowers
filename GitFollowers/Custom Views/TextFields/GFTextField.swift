@@ -19,8 +19,9 @@ class GFTextField: UITextField {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configure(){
+    private func configure() {
         translatesAutoresizingMaskIntoConstraints = false
+        
         layer.cornerRadius = 10
         layer.borderWidth = 2
         layer.borderColor = UIColor.systemGray4.cgColor
@@ -32,9 +33,9 @@ class GFTextField: UITextField {
         minimumFontSize = 12
         backgroundColor = .tertiarySystemBackground
         autocorrectionType = .no
-        autocapitalizationType = .none
-        placeholder = "Enter username"
         returnKeyType = .go
+        clearButtonMode = .whileEditing
+        placeholder = "Enter a username"
     }
 }
 
