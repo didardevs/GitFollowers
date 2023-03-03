@@ -4,10 +4,10 @@
 
 GitFollower app allows the user to search for Github users hitting the GitHub API, you can add and save github users to a favorites list via local persistence, view followers, view repos via safari services.
 
-<img scr ="https://user-images.githubusercontent.com/36921220/222826000-8a25d087-e9c6-4bf2-9ac8-6e173b1ef5c0.png" width="210" height="450">,
-<img scr ="https://user-images.githubusercontent.com/36921220/222826688-1d996db2-614b-4265-aba7-8ec7f482fcf5.png" width="210" height="450">,
-<img scr ="https://user-images.githubusercontent.com/36921220/222826716-1bb171f3-c7cb-4e7a-afbe-9db6fa0c04a9.png" width="210" height="450">,
-<img scr ="https://user-images.githubusercontent.com/36921220/222826721-b123d6d8-3547-4a4c-9863-1d085dffbf4b.png" width="210" height="450">
+![Screen1](https://user-images.githubusercontent.com/36921220/222829846-12c7d312-5bfe-4a87-9b63-34c1c72d674e.png)
+![Screen2](https://user-images.githubusercontent.com/36921220/222829852-0d92ff27-733a-4b06-9cf9-c4acf6c59cb7.png)
+![Screen3](https://user-images.githubusercontent.com/36921220/222829854-6a535177-c754-4385-8bf9-ef4eb04dc12c.png)
+![Screen4](https://user-images.githubusercontent.com/36921220/222829857-1e96b10f-cb07-4c0a-ab69-b51396c31e86.png)
 
 
 # App Premise:
