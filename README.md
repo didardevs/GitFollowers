@@ -31,4 +31,5 @@ Programmatic UI
 Use the GitHub API - No authentication needed
 
 Followers endpoint - https://developer.github.com/v3/users/followers/
+
 User info endpoint - https://developer.github.com/v3/users/
