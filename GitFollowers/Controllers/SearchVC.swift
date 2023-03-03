@@ -12,11 +12,10 @@ class SearchVC: UIViewController {
     
     let logoImageView       = UIImageView()
     let usernameTextField   = GFTextField()
-    let callToActionButton  = GFButton(backgroundColor: .systemGreen, title: "Get Followers")
+    let callToActionButton  = GFButton(color: .systemGreen, title: "Get Followers", systemImageName: "person.3")
     var logoImageViewTopConstraint: NSLayoutConstraint!
     
     var isUsernameEntered: Bool { return !usernameTextField.text!.isEmpty }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +40,7 @@ class SearchVC: UIViewController {
     
     @objc func pushFollowerListVC() {
         guard isUsernameEntered else {
-            presentGFAlertOnMainThread(title: "Empty Username", message: "Please enter a username. We need to know who to look for 😀.", buttonTitle: "Ok")
+            presentGFAlert(title: "Empty Username", message: "Please enter a username. We need to know who to look for 😀.", buttonTitle: "Ok")
             return
         }
         usernameTextField.resignFirstResponder()

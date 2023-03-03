@@ -42,7 +42,7 @@ class FavoritesListVC: GFDataLoadingVC {
     
     func getFavorites() {
         PersistenceManager.retrieveFavorites { [weak self] result in
-            guard let self = self else { return }
+            guard let self else { return }
             
             switch result {
             case .success(let favorites):
@@ -57,7 +57,7 @@ class FavoritesListVC: GFDataLoadingVC {
                 }
                 
             case .failure(let error):
-                self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+                self.presentGFAlert(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
             }
         }
     }
@@ -86,14 +86,20 @@ extension FavoritesListVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard editingStyle == .delete else { return }
         
-        let favorite = favorites[indexPath.row]
-        favorites.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .left)
-        
-        PersistenceManager.updateWith(favorite: favorite, actionType: .remove) { [weak self] error in
-            guard let self = self else { return }
-            guard let error = error else { return }
-            self.presentGFAlertOnMainThread(title: "Unable to remove", message: error.rawValue, buttonTitle: "Ok")
+        PersistenceManager.updateWith(favorite: favorites[indexPath.row], actionType: .remove) { [weak self] error in
+            guard let self else { return }
+            guard let error else {
+                self.favorites.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .left)
+                if self.favorites.isEmpty {
+                    self.showEmptyStateView(with: "No Favorites?\nAdd one on the follower screen.", in: self.view)
+                }
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.presentGFAlert(title: "Unable to remove", message: error.rawValue, buttonTitle: "Ok")
+            }
         }
     }
 }
